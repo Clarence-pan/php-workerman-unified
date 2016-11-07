@@ -1,5 +1,5 @@
 {
-    "name": "clarence/php-workerman-unified",
+    "name": "clarence/workerman-unified",
     "description": "A unified library for workerman/workerman and workerman/workerman-for-win",
     "type": "Library",
     "license": "MIT",
