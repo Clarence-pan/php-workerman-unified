@@ -1,0 +1,22 @@
+{
+    "name": "clarence/php-workerman-unified",
+    "description": "A unified library for workerman/workerman and workerman/workerman-for-win",
+    "type": "Library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Clarence",
+            "email": "clarence-pan@foxmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "workerman/workerman": "^3.3",
+        "workerman/workerman-for-win": "^3.3"
+    },
+    "autoload": {
+        "files": [
+            "./src/unified_workerman_loader.php"
+        ]
+    }
+}
