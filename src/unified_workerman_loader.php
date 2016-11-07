@@ -19,7 +19,7 @@ call_user_func(function(){
         throw new \RuntimeException("Cannot find the vendor directory! Did you run 'composer install'?");
     }
 
-    if (PATH_SEPARATOR === '/'){
+    if (DIRECTORY_SEPARATOR === '/'){
         // linux:
         $workermanDir = $vendorDir .'/workerman/workerman';
     } else {
@@ -36,8 +36,8 @@ call_user_func(function(){
 
     // a simple psr-4 autoloader
     spl_autoload_register(function($class) use ($workermanDir, $workerManNamespace, $workerManNamespaceLen){
-        if (substr_compare($class, $workerManNamespace, $workerManNamespaceLen) === 0){
-            $file = $workermanDir . PATH_SEPARATOR . str_replace('\\', PATH_SEPARATOR, substr($class, $workerManNamespaceLen)) . '.php';
+        if (strlen($class) > $workerManNamespaceLen && substr_compare($class, $workerManNamespace, $workerManNamespaceLen) === 0){
+            $file = $workermanDir . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, substr($class, $workerManNamespaceLen)) . '.php';
             if (is_file($file)){
                 require_once($file);
                 return true;
